@@ -40,9 +40,14 @@ config =
     "easeInOutBack"
     ]
   # defining the initial positions
-  initial_positions: [-100..-1].concat [100..200]
+  initial_positions: [-100..-5].concat [105..200]
   # defining rudimentary visible_positions to get a more exciting closing today ;-)
-  visible_positions: [0..100]
+  visible_positions_top: [80..100]
+  visible_positions_left: [0..100]
+  # define possible font-sizes
+  font_sizes: [6...72]
+  # define rotate possibilities
+  rotate_degrees: [0..360]
 
 methods =
   init: (options) ->
@@ -56,6 +61,8 @@ methods =
       letter_el.css
         top: "#{methods.get_random_array_item config.initial_positions}%"
         left: "#{methods.get_random_array_item config.initial_positions}%"
+        "font-size": "#{methods.get_random_array_item config.font_sizes}px"
+        "-webkit-transform": "rotate(#{methods.get_random_rotate()}deg)"
       config.container.append letter_el
     methods.show_letters()
   
@@ -63,11 +70,14 @@ methods =
     setTimeout ->
       for letter in config.container.children()
         $(letter).css
-          top: "#{methods.get_random_array_item config.visible_positions}%"
-          left: "#{methods.get_random_array_item config.visible_positions}%"
+          top: "#{methods.get_random_array_item config.visible_positions_top}%"
+          left: "#{methods.get_random_array_item config.visible_positions_left}%"
+          "font-size": "#{methods.get_random_array_item config.font_sizes}px"
     , 2000
   
   get_random_letter: -> methods.get_random_array_item config.alphabet
+  
+  get_random_rotate: -> methods.get_random_array_item config.rotate_degrees
   
   get_random_array_item: (array) -> array[Math.floor(Math.random()*array.length)]
 
