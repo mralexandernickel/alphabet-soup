@@ -39,6 +39,8 @@ config =
     "easeInOutCirc",
     "easeInOutBack"
     ]
+  # defines the initial position of the letters... these options/css-classes are defined in alphabet-soup.less
+  initial_position: "top-left"
 
 methods =
   init: (options) ->
@@ -48,7 +50,7 @@ methods =
   create_letters: ->
     while config.letter_count -= 1
       letter_el = $("<span>#{methods.get_random_letter()}</span>")
-      letter_el.addClass methods.get_random_array_item config.transitions
+      letter_el.addClass "#{methods.get_random_array_item config.transitions} #{config.initial_position}"
       config.container.append letter_el
   
   get_random_letter: -> methods.get_random_array_item config.alphabet
