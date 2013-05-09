@@ -55,6 +55,15 @@ methods =
         top: "#{methods.get_random_array_item config.initial_positions}%"
         left: "#{methods.get_random_array_item config.initial_positions}%"
       config.container.append letter_el
+    methods.show_letters()
+  
+  show_letters: ->
+    setTimeout ->
+      for letter in config.container.children()
+        $(letter).css
+          top: "50%"
+          left: "50%"
+    , 2000
   
   get_random_letter: -> methods.get_random_array_item config.alphabet
   

@@ -215,4 +215,5 @@
 #alphabet-soup span[class*="ease"],
 #alphabet-soup span[class*="linear"] {
   position: absolute;
+  color: black;
 }

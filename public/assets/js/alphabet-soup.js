@@ -32,9 +32,8 @@
       return methods.create_letters();
     },
     create_letters: function() {
-      var letter_el, _results2;
+      var letter_el;
 
-      _results2 = [];
       while (config.letter_count -= 1) {
         letter_el = $("<span>" + (methods.get_random_letter()) + "</span>");
         letter_el.addClass(methods.get_random_array_item(config.transitions));
@@ -42,9 +41,25 @@
           top: "" + (methods.get_random_array_item(config.initial_positions)) + "%",
           left: "" + (methods.get_random_array_item(config.initial_positions)) + "%"
         });
-        _results2.push(config.container.append(letter_el));
+        config.container.append(letter_el);
       }
-      return _results2;
+      return methods.show_letters();
+    },
+    show_letters: function() {
+      return setTimeout(function() {
+        var letter, _k, _len, _ref, _results2;
+
+        _ref = config.container.children();
+        _results2 = [];
+        for (_k = 0, _len = _ref.length; _k < _len; _k++) {
+          letter = _ref[_k];
+          _results2.push($(letter).css({
+            top: "50%",
+            left: "50%"
+          }));
+        }
+        return _results2;
+      }, 2000);
     },
     get_random_letter: function() {
       return methods.get_random_array_item(config.alphabet);
