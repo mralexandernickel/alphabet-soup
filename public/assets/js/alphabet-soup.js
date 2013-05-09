@@ -57,7 +57,11 @@
           top: "" + (methods.get_random_array_item(config.initial_positions)) + "%",
           left: "" + (methods.get_random_array_item(config.initial_positions)) + "%",
           "font-size": "" + (methods.get_random_array_item(config.font_sizes)) + "px",
-          "-webkit-transform": "rotate(" + (methods.get_random_rotate()) + "deg)"
+          "-webkit-transform": "rotate(" + (methods.get_random_rotate()) + "deg)",
+          "-moz-transform": "rotate(" + (methods.get_random_rotate()) + "deg)",
+          "-ms-transform": "rotate(" + (methods.get_random_rotate()) + "deg)",
+          "-o-transform": "rotate(" + (methods.get_random_rotate()) + "deg)",
+          "transform": "rotate(" + (methods.get_random_rotate()) + "deg)"
         });
         config.container.append(letter_el);
       }
