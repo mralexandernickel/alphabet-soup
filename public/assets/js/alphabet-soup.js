@@ -5,7 +5,7 @@
 
 }).call(this);
 (function() {
-  var $, config, methods, _i, _j, _k, _l, _m, _results, _results1, _results2, _results3, _results4,
+  var $, config, methods, _i, _j, _k, _l, _m, _n, _results, _results1, _results2, _results3, _results4, _results5,
     __slice = [].slice;
 
   $ = jQuery;
@@ -24,21 +24,25 @@
       for (_i = 105; _i <= 200; _i++){ _results.push(_i); }
       return _results;
     }).apply(this)),
-    visible_positions_top: [80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],
-    visible_positions_left: (function() {
+    visible_positions_top: (function() {
       _results2 = [];
-      for (_k = 0; _k <= 100; _k++){ _results2.push(_k); }
+      for (_k = 70; _k <= 100; _k++){ _results2.push(_k); }
       return _results2;
     }).apply(this),
-    font_sizes: (function() {
+    visible_positions_left: (function() {
       _results3 = [];
-      for (_l = 6; _l < 72; _l++){ _results3.push(_l); }
+      for (_l = 0; _l <= 100; _l++){ _results3.push(_l); }
       return _results3;
     }).apply(this),
-    rotate_degrees: (function() {
+    font_sizes: (function() {
       _results4 = [];
-      for (_m = 0; _m <= 360; _m++){ _results4.push(_m); }
+      for (_m = 12; _m < 128; _m++){ _results4.push(_m); }
       return _results4;
+    }).apply(this),
+    rotate_degrees: (function() {
+      _results5 = [];
+      for (_n = 0; _n <= 360; _n++){ _results5.push(_n); }
+      return _results5;
     }).apply(this)
   };
 
@@ -69,20 +73,23 @@
     },
     show_letters: function() {
       return setTimeout(function() {
-        var letter, _len, _n, _ref, _results5;
+        var letter, position_left, _len, _o, _ref, _results6;
 
         _ref = config.container.children();
-        _results5 = [];
-        for (_n = 0, _len = _ref.length; _n < _len; _n++) {
-          letter = _ref[_n];
-          _results5.push($(letter).css({
+        _results6 = [];
+        for (_o = 0, _len = _ref.length; _o < _len; _o++) {
+          letter = _ref[_o];
+          _results6.push(position_left = $(letter).css({
             top: "" + (methods.get_random_array_item(config.visible_positions_top)) + "%",
             left: "" + (methods.get_random_array_item(config.visible_positions_left)) + "%",
             "font-size": "" + (methods.get_random_array_item(config.font_sizes)) + "px"
           }));
         }
-        return _results5;
+        return _results6;
       }, 2000);
+    },
+    get_position_top: function(position_left) {
+      return position_left * 0.25;
     },
     get_random_letter: function() {
       return methods.get_random_array_item(config.alphabet);

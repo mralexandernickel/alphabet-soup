@@ -42,10 +42,10 @@ config =
   # defining the initial positions
   initial_positions: [-100..-5].concat [105..200]
   # defining rudimentary visible_positions to get a more exciting closing today ;-)
-  visible_positions_top: [80..100]
+  visible_positions_top: [70..100]
   visible_positions_left: [0..100]
   # define possible font-sizes
-  font_sizes: [6...72]
+  font_sizes: [12...128]
   # define rotate possibilities
   rotate_degrees: [0..360]
 
@@ -73,11 +73,14 @@ methods =
   show_letters: ->
     setTimeout ->
       for letter in config.container.children()
+        position_left = 
         $(letter).css
           top: "#{methods.get_random_array_item config.visible_positions_top}%"
           left: "#{methods.get_random_array_item config.visible_positions_left}%"
           "font-size": "#{methods.get_random_array_item config.font_sizes}px"
     , 2000
+  
+  get_position_top: (position_left) -> position_left * 0.25
   
   get_random_letter: -> methods.get_random_array_item config.alphabet
   
