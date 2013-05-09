@@ -39,8 +39,8 @@
         letter_el = $("<span>" + (methods.get_random_letter()) + "</span>");
         letter_el.addClass(methods.get_random_array_item(config.transitions));
         letter_el.css({
-          top: methods.get_random_array_item(config.initial_positions),
-          left: methods.get_random_array_item(config.initial_positions)
+          top: "" + (methods.get_random_array_item(config.initial_positions)) + "%",
+          left: "" + (methods.get_random_array_item(config.initial_positions)) + "%"
         });
         _results2.push(config.container.append(letter_el));
       }
