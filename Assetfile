@@ -9,7 +9,7 @@ assets_path = "public/assets"
 output "#{assets_path}/css"
 input "assets" do
   match "less/master.less" do
-    less :paths => ["assets/lib/less-easing/less","assets/less"]
+    less :paths => ["assets/lib/less-easing/less","assets/lib/less-transform/less","assets/less"]
       copy "alphabet-soup.css"
   end
 end

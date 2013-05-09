@@ -1,3 +1,6 @@
 [submodule "assets/lib/less-easing"]
 	path = assets/lib/less-easing
 	url = git://github.com/mralexandernickel/less-easing.git
+[submodule "assets/lib/less-transform"]
+	path = assets/lib/less-transform
+	url = git://github.com/mralexandernickel/less-transform.git
