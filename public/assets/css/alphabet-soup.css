@@ -213,38 +213,38 @@
   left: 0;
   color: white;
 }
-#alphabet-soup span {
+span[class="ease*"] {
   position: absolute;
 }
-#alphabet-soup span.top-left {
+span[class="ease*"].top-left {
   top: -100px;
   left: -100px;
 }
-#alphabet-soup span.top {
+span[class="ease*"].top {
   top: -100px;
   left: 50%;
 }
-#alphabet-soup span.top-right {
+span[class="ease*"].top-right {
   top: -100px;
   right: -100px;
 }
-#alphabet-soup span.right {
+span[class="ease*"].right {
   top: 50%;
   right: -100px;
 }
-#alphabet-soup span.bottom-right {
+span[class="ease*"].bottom-right {
   bottom: -100px;
   right: -100px;
 }
-#alphabet-soup span.bottom {
+span[class="ease*"].bottom {
   bottom: -100px;
   left: 50%;
 }
-#alphabet-soup span.bottom-left {
+span[class="ease*"].bottom-left {
   bottom: -100px;
   left: -100px;
 }
-#alphabet-soup span.left {
+span[class="ease*"].left {
   top: 50%;
   left: -100px;
 }
