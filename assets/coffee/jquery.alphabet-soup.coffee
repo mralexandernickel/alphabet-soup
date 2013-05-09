@@ -11,7 +11,7 @@ config =
   transitions: [
     "linear",
     "ease",
-    "easIn",
+    "easeIn",
     "easeOut",
     "easeInOut",
     "easeInQuad",
