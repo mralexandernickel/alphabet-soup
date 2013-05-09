@@ -213,47 +213,7 @@
   left: 0;
   color: white;
 }
-span[class*="ease"],
-span[class*="linear"] {
+#alphabet-soup span[class*="ease"],
+#alphabet-soup span[class*="linear"] {
   position: absolute;
-}
-span[class*="ease"].top-left,
-span[class*="linear"].top-left {
-  top: -100px;
-  left: -100px;
-}
-span[class*="ease"].top,
-span[class*="linear"].top {
-  top: -100px;
-  left: 50%;
-}
-span[class*="ease"].top-right,
-span[class*="linear"].top-right {
-  top: -100px;
-  right: -100px;
-}
-span[class*="ease"].right,
-span[class*="linear"].right {
-  top: 50%;
-  right: -100px;
-}
-span[class*="ease"].bottom-right,
-span[class*="linear"].bottom-right {
-  bottom: -100px;
-  right: -100px;
-}
-span[class*="ease"].bottom,
-span[class*="linear"].bottom {
-  bottom: -100px;
-  left: 50%;
-}
-span[class*="ease"].bottom-left,
-span[class*="linear"].bottom-left {
-  bottom: -100px;
-  left: -100px;
-}
-span[class*="ease"].left,
-span[class*="linear"].left {
-  top: 50%;
-  left: -100px;
 }
