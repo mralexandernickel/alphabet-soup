@@ -41,6 +41,8 @@ config =
     ]
   # defining the initial positions
   initial_positions: [-100..-1].concat [100..200]
+  # defining rudimentary visible_positions to get a more exciting closing today ;-)
+  visible_positions: [0..100]
 
 methods =
   init: (options) ->
@@ -61,8 +63,8 @@ methods =
     setTimeout ->
       for letter in config.container.children()
         $(letter).css
-          top: "50%"
-          left: "50%"
+          top: "#{methods.get_random_array_item config.visible_positions}%"
+          left: "#{methods.get_random_array_item config.visible_positions}%"
     , 2000
   
   get_random_letter: -> methods.get_random_array_item config.alphabet

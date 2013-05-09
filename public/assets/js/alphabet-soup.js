@@ -5,7 +5,7 @@
 
 }).call(this);
 (function() {
-  var $, config, methods, _i, _j, _results, _results1,
+  var $, config, methods, _i, _j, _k, _results, _results1, _results2,
     __slice = [].slice;
 
   $ = jQuery;
@@ -23,7 +23,12 @@
       _results = [];
       for (_i = 100; _i <= 200; _i++){ _results.push(_i); }
       return _results;
-    }).apply(this))
+    }).apply(this)),
+    visible_positions: (function() {
+      _results2 = [];
+      for (_k = 0; _k <= 100; _k++){ _results2.push(_k); }
+      return _results2;
+    }).apply(this)
   };
 
   methods = {
@@ -47,18 +52,18 @@
     },
     show_letters: function() {
       return setTimeout(function() {
-        var letter, _k, _len, _ref, _results2;
+        var letter, _l, _len, _ref, _results3;
 
         _ref = config.container.children();
-        _results2 = [];
-        for (_k = 0, _len = _ref.length; _k < _len; _k++) {
-          letter = _ref[_k];
-          _results2.push($(letter).css({
-            top: "50%",
-            left: "50%"
+        _results3 = [];
+        for (_l = 0, _len = _ref.length; _l < _len; _l++) {
+          letter = _ref[_l];
+          _results3.push($(letter).css({
+            top: "" + (methods.get_random_array_item(config.visible_positions)) + "%",
+            left: "" + (methods.get_random_array_item(config.visible_positions)) + "%"
           }));
         }
-        return _results2;
+        return _results3;
       }, 2000);
     },
     get_random_letter: function() {
