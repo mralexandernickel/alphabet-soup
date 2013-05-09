@@ -19,7 +19,7 @@ output "#{assets_path}/js"
 input "assets" do
   match "coffee/*.coffee" do
     coffee_script
-    concat "alphabet_soup.js"
+    concat "alphabet-soup.js"
   end
 end
 
