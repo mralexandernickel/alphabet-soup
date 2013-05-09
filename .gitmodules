@@ -1,0 +1,3 @@
+[submodule "assets/lib/less-easing"]
+	path = assets/lib/less-easing
+	url = git://github.com/mralexandernickel/less-easing.git

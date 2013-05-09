@@ -8,8 +8,8 @@ assets_path = "public/assets"
 # compile and concat all LESS files...
 output "#{assets_path}/css"
 input "assets" do
-  match "less/alphabet-soup.less" do
-    less :paths => ["assets/less"]
+  match "less/master.less" do
+    less :paths => ["assets/lib/less-easing/less","assets/less"]
       copy "alphabet-soup.css"
   end
 end
