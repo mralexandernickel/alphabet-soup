@@ -14,7 +14,8 @@
     container: false,
     letter_count: 1000,
     alphabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
-    transitions: ["linear", "ease", "easIn", "easeOut", "easeInOut", "easeInQuad", "easeInCubic", "easeInQuart", "easeInQuint", "easeInSine", "easeInExpo", "easeInCirc", "easeInBack", "easeOutQuad", "easeOutCubic", "easeOutQuart", "easeOutQuint", "easeOutSine", "easeOutExpo", "easeOutCirc", "easeOutBack", "easeInOutQuad", "easeInOutCubic", "easeInOutQuart", "easeInOutQuint", "easeInOutSine", "easeInOutExpo", "easeInOutCirc", "easeInOutBack"]
+    transitions: ["linear", "ease", "easeIn", "easeOut", "easeInOut", "easeInQuad", "easeInCubic", "easeInQuart", "easeInQuint", "easeInSine", "easeInExpo", "easeInCirc", "easeInBack", "easeOutQuad", "easeOutCubic", "easeOutQuart", "easeOutQuint", "easeOutSine", "easeOutExpo", "easeOutCirc", "easeOutBack", "easeInOutQuad", "easeInOutCubic", "easeInOutQuart", "easeInOutQuint", "easeInOutSine", "easeInOutExpo", "easeInOutCirc", "easeInOutBack"],
+    initial_position: "top-left"
   };
 
   methods = {
@@ -28,8 +29,8 @@
       _results = [];
       while (config.letter_count -= 1) {
         letter_el = $("<span>" + (methods.get_random_letter()) + "</span>");
-        letter_el.addClass(methods.get_random_array_item(config.transitions));
-        _results.push(config.container.append(letter_el));
+        letter_el.addClass("" + (methods.get_random_array_item(config.transitions)) + " " + config.initial_position);
+        _results.push($(document.body).append(letter_el));
       }
       return _results;
     },

@@ -51,7 +51,7 @@ methods =
     while config.letter_count -= 1
       letter_el = $("<span>#{methods.get_random_letter()}</span>")
       letter_el.addClass "#{methods.get_random_array_item config.transitions} #{config.initial_position}"
-      config.container.append letter_el
+      $(document.body).append letter_el
   
   get_random_letter: -> methods.get_random_array_item config.alphabet
   
