@@ -39,6 +39,8 @@ config =
     "easeInOutCirc",
     "easeInOutBack"
     ]
+  # defining the initial positions
+  initial_positions: [-100..-1].concat [100..200]
 
 methods =
   init: (options) ->
@@ -49,6 +51,9 @@ methods =
     while config.letter_count -= 1
       letter_el = $("<span>#{methods.get_random_letter()}</span>")
       letter_el.addClass methods.get_random_array_item config.transitions
+      letter_el.css
+        top: methods.get_random_array_item config.initial_positions
+        left: methods.get_random_array_item config.initial_positions
       config.container.append letter_el
   
   get_random_letter: -> methods.get_random_array_item config.alphabet
